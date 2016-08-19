@@ -1,0 +1,12 @@
+export const APPLY_PATTERN = 'APPLY_PATTERN';
+export const AUTO_RUN = 'AUTO_RUN';
+export const CLEAR_BOARD = 'CLEAR_BOARD';
+export const GENERATE_BOARD = 'GENERATE_BOARD';
+export const NEXT_GENENERATION = 'NEXT_GENENERATION';
+export const RUN_STEP = 'RUN_STEP';
+export const SET_PATTERN = 'SET_PATTERN';
+export const TOGGLE_CELL = 'TOGGLE_CELL';
+export const TOGGLE_PLAY = 'TOGGLE_PLAY';
+export const TOGGLE_SETTING = 'TOGGLE_SETTING';
+export const TOGGLE_SETTINGS_VIEW = 'TOGGLE_SETTINGS_VIEW';
+export const UPDATE_SETTING = 'UPDATE_SETTING';

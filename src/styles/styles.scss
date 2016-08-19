@@ -1,0 +1,279 @@
+$border-radius: 0.4em;
+$control-bg: #333;
+
+html {
+    height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow-x: hidden;
+    background: linear-gradient(0deg, rgba(255,0,0,1), rgba(255,0,0,0) 80%) no-repeat;
+    background-attachment: fixed;
+}
+
+.logo {
+	font-family: 'Frijole', cursive;
+	font-size: 48px;
+	text-shadow: 4px 4px 4px #aaa;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.footer {
+	position: relative;
+	height: 60px;
+	background: #444;
+	padding: 20px;
+	text-align: center;
+	color: #ddd;
+	clear: both;
+	
+	a {
+		color: #ccc;
+		font-weight: bold;
+	}
+	
+	.social {
+		float: right;
+
+		a {
+			color: #cc7;
+			margin: 0 5px;
+			
+			&:hover {
+				color: #dd3;
+			}
+		}
+	}
+}
+
+.container {
+	position: relative;
+	left: 50%;
+	float: left;
+	min-height: 100%;
+	margin-bottom: 90px;
+
+	.centered {
+		position: relative;
+		left: -50%;
+		text-align: left;
+	}
+
+	.panel {
+		height: 100%;
+		border-radius: $border-radius;
+		overflow: hidden;
+	}
+
+	.bg {
+		padding: 10px;
+		background: #555;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+		z-index: 500;
+	}
+
+	.tab {
+		width: auto;
+		margin: 0 20px;
+		overflow: visible;
+		color: #fff;
+		font-weight: bold;
+		border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
+	}
+
+	.generator {
+		@extend .tab;
+		float: left;
+	}
+
+	.generations {
+		@extend .tab;
+		float: right;
+
+		span {
+			background: #eee;
+			border-radius: 3px;
+			font-weight: bold;
+			color: #333;
+			padding: 3px;
+		}
+	}
+
+	.actions {
+		position: relative;
+		width: 550px;
+		margin: 0 auto;
+		padding-top: 0;
+		padding-bottom: 0;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	
+		i {
+			cursor: pointer;
+		}
+	
+		.reveal {
+			display: none;
+			text-align: center;
+			height: 65px;
+			color: #ccc;
+			font-weight: bold;
+			padding: 4px 0;
+			background: $control-bg;
+			border-radius: 0 0 $border-radius $border-radius;
+			padding: 20px 10px;
+	
+			.control {
+				position: relative;
+				display: inline-block;
+				width: auto;
+				margin: 0 20px;
+				text-align: center;
+			}
+	
+			.form-control {
+				display: block;
+				width: 100%;
+				padding: 10px;
+			}
+	
+			label {
+				width: 30%;
+				margin-right: 5px;
+				float: left;
+			}
+	
+			input[type=number] {
+				width: 50px;
+			}
+	
+			input[type=range] {
+				float: left;
+				width: 90px;
+				margin-top: -7px;
+			}
+	
+			output {
+				position: relative;
+				margin-left: 10px;
+				margin-top: 5px;
+			}
+			
+			p {
+				text-align: left;
+				font-size: 1em;
+			}
+
+			.fa-stack {
+				color: #000;
+			}
+	
+			&.active {
+				display: block;
+			}
+		}
+	}
+}
+
+.scrollbars {
+	overflow-y: auto;
+	height: 100%;
+	margin-left: 4px;
+
+	&::-webkit-scrollbar-track {
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+		background-color: #f5f5f5;
+	}
+
+	&::-webkit-scrollbar {
+		width: 10px;
+		background-color: #f5f5f5;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #000;
+		border: 2px solid #555;
+	}
+}
+
+.patterns {
+	position: relative;
+	float: right;
+	text-align: left;
+	padding: 5px 0 5px 10px;
+	box-shadow: inset 0 0 20px #444;
+	border-radius: 5px;
+	margin: -5px 0 0 10px;
+
+	a {
+		display: block;
+		position: relative;
+		color: #ccc;
+		text-decoration: none;
+		padding: 3px 5px;
+		border-radius: 5px 0 0 5px;
+
+		&:hover {
+			background: #454;
+			color: #ddd;
+			opacity: 0.7;
+		}
+	}
+}
+
+ul.menu {
+	float: right;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	
+	li {
+		float: left;
+		margin: 0 4px 4px;
+		padding: 5px 10px;
+		cursor: pointer;
+		color: #ccc;
+
+		&.active {
+			background: $control-bg;
+			border-radius: 0 0 $border-radius $border-radius;
+			border-top: 0;
+			padding-top: 3px;
+			color: #ccc;
+		}
+	}
+}
+
+.row {
+	display: flex;
+
+	.col {
+		flex: 1;
+		text-align: left;
+	}
+}
+
+.board {
+
+	.cell {
+		float: left;
+		outline: 1px solid #ccc;
+		&.newborn {
+			background: #cc3;
+		}
+
+		&.alive {
+			background: #c53;
+		}
+	
+		&.dead {
+			background: #fff;
+		}
+	}
+}
